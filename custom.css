@@ -56,3 +56,22 @@ iframe {
       display:block !important;
   }
 }
+
+input {
+  border-radius: 10px;
+  margin-top: 2%;
+}
+
+.reg-log-button {
+  margin-top: 3%;
+  font-size: 1.2em;
+}
+
+.reg-log-box {
+  border-radius: 10px;
+  padding: 5%;
+  display: inline-block;
+  float: none;
+}
+
+
