@@ -145,8 +145,10 @@
                 <div id="login-header" class="services-header">
                     <h4><a href="login-register.html">Register</a> or <a href="login-register.html">Login</a> to Review Your Work Orders</h4>
                 </div>
+                <button id="review-orders">Review Orders</button>
+                <button id="edit-orders">Edit Orders</button>
 
-                <div class="work-order-visible hide"> <!-- Begin visible section-->
+                <div id="work-order-show-sect"> <!-- Begin visible section-->
                     <h3 class="services-header-title">Current Work Orders</h3>
                     <div class="show-index-buttons">
                       <button id="job-show">Find Order: </button>
@@ -155,12 +157,12 @@
                     </div>
                     <br>
 
-                    <div class="show-index-box">
+                    <div>
                         <script id="job-index-template" type="text/x-handlbars-template">
                           <h3>Current Work Orders</h3>
                           {{#each jobs}}
                           <h4{{title}}</h4>
-                          <ul>
+                          <ul id="index-jobs-list">
                             <li>
                                 {{#if description}}
                                   Description: {{description}}
@@ -192,12 +194,14 @@
                             </ul>
                           {{/each}}
                         </script>
+                    </div>
 
+                    <div>
                         <script id="job-show-template" type="text/x-handlbars-template">
                           <h3>Current Work Order</h3>
                           {{#each jobs}}
                           <h4{{title}}</h4>
-                          <ul>
+                          <ul id="show-jobs-list">
                             <li>
                                 {{#if description}}
                                   Description: {{description}}
@@ -231,10 +235,9 @@
                         </script>
                     </div>  <!-- End show index box -->
 
-                </div> <!-- End work-order-visible-->
-
+                </div> <!-- End work-order-sect-->
                 <br>
-                <div class="admin-job-crud"> <!-- Begin admin job-crud-->
+                <div id="admin-crud" class="admin-job-crud"> <!-- Begin admin job-crud-->
                     <div class="jobs-inputs">
                       <input id="job-id" placeholder="id">
                       <input id="job-title" placeholder="title">
@@ -249,8 +252,7 @@
                       <button id="job-update">Update</button>
                       <button id="job-destroy">Destroy</button>
                     </div>
-                </div> <!-- End admin job crud section-->
-
+                </div>
 
 
             </div> <!-- end div class row-->
