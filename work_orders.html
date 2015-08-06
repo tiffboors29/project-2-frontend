@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <!-- meta data & title -->
+        <meta charset="utf-8">
+        <title>Nesto Guitars</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="node_modules/template/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="node_modules/template/css/style.css">
+        <link rel="stylesheet" href="node_modules/template/css/animate.min.css">
+<!--         <link rel="stylesheet" type="text/css" media="all" href="node_modules/template/css/style-projects.css"> -->
+        <link rel="stylesheet" href="assets/styles/custom.css">
+
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="node_modules/template/ico/guitar-vector.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="node_modules/template/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="node_modules/template/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="node_modules/template/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="node_modules/template/ico/apple-touch-icon-57-precomposed.png">
+    </head>
+  <body>
+
+
+    <!-- Header -->
+
+    <nav id="navbar-section" class="navbar navbar-default navbar-static-top navbar-sticky" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand wow fadeInDownBig" href="index.html"><img src="node_modules/template/img/slider/nesto.png" width="200" alt="Nesto Guitars"></a>
+            </div>
+
+            <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Services <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="work_orders.html">My Work Orders</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Shop <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="shop.html">Guitars In Stock</a></li>
+                            <li><a href="custom-shop.html">Custom Instruments</a></li>
+                            <li><a href="parts-shop.html">Parts</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html"><span>Contact</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Register/Login <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="btn-register" data-toggle="modal" data-target="#myRegisterModal">Register</a></li>
+                            <li><a class="btn-login" data-toggle="modal" data-target="#myLoginModal">Log-in</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- End Header -->
+
+    <!-- Begin modal section -->
+    <div class="modal fade" id="myRegisterModal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Register</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="given_name">First Name</label>
+                <input id="given_name" class="form-control" placeholder="First Name" type="text">
+              </div>
+              <div class="form-group">
+                <label for="surname">Last Name</label>
+                <input id="surname" class="form-control" placeholder="Last Name" type="text">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" class="form-control" placeholder="Enter email" type="email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" placeholder="Password" type="password">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-dismiss="modal" class="btn">Close</a>
+              <button id="register" class="btn btn-primary">Register</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myLoginModal">
+        <div class="modal-dialog">
+            <form>
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" placeholder="Email" type="email" >
+
+                <label for="loginPassword">Password</label>
+                <input id="loginPassword" placeholder="Password"
+                         type="password">
+                <a href="#" data-dismiss="modal" class="btn">Close</a>
+                <button id="login" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- End modal section -->
+
+
+    <!-- Begin #carousel-section -->
+    <section id="carousel-section" class="section-global-wrapper">
+        <div class="container-fluid-kamn">
+            <div class="row">
+                <div id="carousel-1" class="carousel slide">
+
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators visible-lg">
+                        <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-1" data-slide-to="1"></li>
+                        <li data-target="#carousel-1" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <!-- Begin Slide 1 -->
+                        <div class="item active">
+                            <img src="node_modules/template/img/slider/Electric_guitarStrings.jpg" height="400" alt="">
+                            <div class="carousel-caption">
+                                <h3 class="carousel-title hidden-xs">Office BOOTSTRAP TEMPLATE</h3>
+                                <p class="carousel-body">RESPONSIVE \ MULTI PAGE</p>
+                            </div>
+                        </div>
+                        <!-- End Slide 1 -->
+
+                        <!-- Begin Slide 2 -->
+                        <div class="item">
+                            <img src="node_modules/template/img/slider/nestg2.jpg" height="400" alt="">
+                            <div class="carousel-caption">
+                                <h3 class="carousel-title hidden-xs">EASY TO CUSTOMIZE</h3>
+                                <p class="carousel-body">BEAUTIFUL \ CLEAN \ MINIMAL</p>
+                            </div>
+                        </div>
+                        <!-- End Slide 2 -->
+
+                        <!-- Begin Slide 3 -->
+                        <div class="item">
+                            <img src="node_modules/template/img/slider/slide2.jpg" height="400" alt="">
+                            <div class="carousel-caption">
+                                <h3 class="carousel-title hidden-xs">MULTI-PURPOSE TEMPLATE</h3>
+                                <p class="carousel-body">PORTFOLIO \ CORPORATE \ CREATIVE</p>
+                            </div>
+                        </div>
+                        <!-- End Slide 3 -->
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-1" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-1" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End #carousel-section -->
+
+
+    <!-- Begin #services-section -->
+    <section id="services" class="services-section section-global-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="services-header">
+                    <h3 class="services-header-title">Current Work Orders</h3>
+                   <div>
+                      <input id="work-order-id" placeholder="id">
+                      <input id="work-order-title" placeholder="title">
+                      <br>
+                      <br>
+                      <input id="work-order-customer-id" placeholder="customer id">
+                      <input id="work-order-status" placeholder="status">
+                      <br>
+                      <br>
+                      <input id="work-order-cost" placeholder="cost">
+                      <br>
+                      <br>
+                      <input id="work-order-description" placeholder="description">
+                      <br>
+                      <br>
+                      <button id="work-order-create">Create</button>
+                      <button id="work-order-update">Update</button>
+                      <button id="work-order-destroy">Destroy</button>
+                      <br>
+                      <br>
+                      <button id="work-order-index">Show All</button>
+                      <br>
+                      <br>
+                      <button id="work-order-show">Find Order: </button>
+                      <input id="work-order-show-id" placeholder="id">
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End #services-section -->
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3><i class="fa fa-map-marker"></i> Contact:</h3>
+                    <p class="footer-contact">
+                        Nesto Hernandez<br>
+                        Phone: 517.881.6580<br>
+                        Email: nesto@nestoguitars.com<br>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3><i class="fa fa-external-link"></i> Links</h3>
+                    <p> <a href="#"> About</a></p>
+                    <p> <a href="#"> Services</a></p>
+                    <p> <a href="#"> Shop</a></p>
+                    <p> <a href="#"> Custom Shop</a></p>
+                    <p> <a href="#"> Contact</a></p>
+                </div>
+              <div class="col-md-4">
+                <h3><i class="fa fa-heart"></i> Socialize</h3>
+                <div id="social-icons">
+                  <div class="btn-group twitter fa fa-twitter fa-3x"><img src="node_modules/template/img/social-icons/btn_twitter.png"></div>
+                  <div class="btn-group facebook fa fa-facebook fa-3x"><img src="node_modules/template/img/social-icons/btn_facebook.png"></div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/template/wow.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
