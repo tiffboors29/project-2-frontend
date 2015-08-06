@@ -69,9 +69,6 @@
                     <li>
                         <a href="contact.html"><span>Contact</span></a>
                     </li>
-                    <li>
-                        <a href="login-register.html"><span>Login/Register</span></a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -145,41 +142,119 @@
     <section id="services" class="services-section section-global-wrapper">
         <div class="container">
             <div class="row">
-                <div class="services-header">
+                <div id="login-header" class="services-header">
+                    <h4><a href="login-register.html">Register</a> or <a href="login-register.html">Login</a> to Review Your Work Orders</h4>
+                </div>
 
-
-                    <br>
-                    <br>
+                <div class="work-order-visible hide"> <!-- Begin visible section-->
                     <h3 class="services-header-title">Current Work Orders</h3>
-                   <div>
+                    <div class="show-index-buttons">
+                      <button id="job-show">Find Order: </button>
+                      <input id="job-show-id" placeholder="id">
+                      <button id="job-index">Show All</button>
+                    </div>
+                    <br>
+
+                    <div class="show-index-box">
+                        <script id="job-index-template" type="text/x-handlbars-template">
+                          <h3>Current Work Orders</h3>
+                          {{#each jobs}}
+                          <h4{{title}}</h4>
+                          <ul>
+                            <li>
+                                {{#if description}}
+                                  Description: {{description}}
+                                {{else}}
+                                  No Description Listed.
+                                {{/if}}
+                              </li>
+                              <li>
+                                {{#if user_id}}
+                                  Customer: {{user_id}}
+                                {{else}}
+                                  No Customer Listed.
+                                {{/if}}
+                              </li>
+                              <li>
+                                {{#if status}}
+                                  Dtatus: {{status}}
+                                {{else}}
+                                  No Status Listed.
+                                {{/if}}
+                              </li>
+                              <li>
+                                {{#if cost}}
+                                  Cost: {{cost}}
+                                {{else}}
+                                  No cost Listed.
+                                {{/if}}
+                              </li>
+                            </ul>
+                          {{/each}}
+                        </script>
+
+                        <script id="job-show-template" type="text/x-handlbars-template">
+                          <h3>Current Work Order</h3>
+                          {{#each jobs}}
+                          <h4{{title}}</h4>
+                          <ul>
+                            <li>
+                                {{#if description}}
+                                  Description: {{description}}
+                                {{else}}
+                                  No Description Listed.
+                                {{/if}}
+                              </li>
+                              <li>
+                                {{#if user_id}}
+                                  Customer: {{user_id}}
+                                {{else}}
+                                  No Customer Listed.
+                                {{/if}}
+                              </li>
+                              <li>
+                                {{#if status}}
+                                  Dtatus: {{status}}
+                                {{else}}
+                                  No Status Listed.
+                                {{/if}}
+                              </li>
+                              <li>
+                                {{#if cost}}
+                                  Cost: {{cost}}
+                                {{else}}
+                                  No cost Listed.
+                                {{/if}}
+                              </li>
+                            </ul>
+                          {{/each}}
+                        </script>
+                    </div>  <!-- End show index box -->
+
+                </div> <!-- End work-order-visible-->
+
+                <br>
+                <div class="admin-job-crud"> <!-- Begin admin job-crud-->
+                    <div class="jobs-inputs">
                       <input id="job-id" placeholder="id">
                       <input id="job-title" placeholder="title">
-                      <br>
-                      <br>
                       <input id="job-customer-id" placeholder="customer id">
                       <input id="job-status" placeholder="status">
-                      <br>
-                      <br>
                       <input id="job-cost" placeholder="cost">
-                      <br>
-                      <br>
                       <input id="job-description" placeholder="description">
-                      <br>
-                      <br>
+                    </div>
+                    <br>
+                    <div class="jobs-buttons">
                       <button id="job-create">Create</button>
                       <button id="job-update">Update</button>
                       <button id="job-destroy">Destroy</button>
-                      <br>
-                      <br>
-                      <button id="job-index">Show All</button>
-                      <br>
-                      <br>
-                      <button id="job-show">Find Order: </button>
-                      <input id="job-show-id" placeholder="id">
-                   </div>
-                </div>
-            </div>
-        </div>
+                    </div>
+                </div> <!-- End admin job crud section-->
+
+
+
+            </div> <!-- end div class row-->
+        </div> <!-- end div class container-->
     </section>
     <!-- End #services-section -->
 
@@ -220,6 +295,7 @@
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/simpleStorage/simpleStorage.js"></script>
+    <script src="handlebars-v3.0.3.js"></script>
     <script src="node_modules/template/wow.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </body>

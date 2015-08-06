@@ -44,7 +44,7 @@
 
             <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav pull-right">
-                    <li class="active">
+                    <li>
                         <a href="index.html">Home</a>
                     </li>
                     <li>
@@ -67,9 +67,6 @@
                     </li>
                     <li>
                         <a href="contact.html"><span>Contact</span></a>
-                    </li>
-                    <li>
-                        <a href="login-register.html"><span>Login/Register</span></a>
                     </li>
                 </ul>
             </div>
@@ -145,36 +142,38 @@
         <div class="container">
             <div class="row">
                 <div class="services-header">
-                   <!-- Begin login register Section -->
-                  <div class ="register-box reg-log-box">
-                    <div>
-                      <label for="given_name">First Name</label>
-                      <input id="given_name" placeholder="First Name">
+                  <!-- Begin login register Section -->
+                  <div class="sign-in-up">
+                    <div class ="register-box reg-log-box">
+                      <div>
+                        <label for="given_name">First Name</label>
+                        <input id="given_name" placeholder="First Name">
+                      </div>
+                      <div>
+                        <label for="surname">Last Name</label>
+                        <input id="surname" placeholder="Last Name">
+                      </div>
+                      <div>
+                        <label for="email">Email</label>
+                        <input id="email" placeholder="Email" type="email">
+                      </div>
+                      <div>
+                        <label for="password">Password</label>
+                        <input id="password" placeholder="password" type="password">
+                      </div>
+                      <button id="register" class="reg-log-button btn btn-primary">Register</button>
                     </div>
-                    <div>
-                      <label for="surname">Last Name</label>
-                      <input id="surname" placeholder="Last Name">
+                    <div class ="login-box reg-log-box">
+                      <div>
+                        <label for="loginEmail">Email</label>
+                        <input id="loginEmail" placeholder="Email" type="email">
+                      </div>
+                      <div>
+                        <label for="loginPassword">Password</label>
+                        <input id="loginPassword" placeholder="password" type="password">
+                      </div>
+                      <button id="login" class="reg-log-button btn btn-primary">Login</button>
                     </div>
-                    <div>
-                      <label for="email">Email</label>
-                      <input id="email" placeholder="Email" type="email">
-                    </div>
-                    <div>
-                      <label for="password">Password</label>
-                      <input id="password" placeholder="password" type="password">
-                    </div>
-                    <button id="register" class="reg-log-button btn btn-primary">Register</button>
-                  </div>
-                  <div class ="login-box reg-log-box">
-                    <div>
-                      <label for="loginEmail">Email</label>
-                      <input id="loginEmail" placeholder="Email" type="email">
-                    </div>
-                    <div>
-                      <label for="loginPassword">Password</label>
-                      <input id="loginPassword" placeholder="password" type="password">
-                    </div>
-                    <button id="login" class="reg-log-button btn btn-primary">Login</button>
                   </div>
                   <!-- End login register section -->
                 </div>
