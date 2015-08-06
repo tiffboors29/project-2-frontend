@@ -16,10 +16,7 @@ $(function() {
           }
         }),
         dataType: 'json',
-        method: 'POST',
-        headers: {
-          Authorization: 'Token token=' + $('#token').val()
-        }
+        method: 'POST'
       }).done(function(data, textStatus, jqxhr){
         console.log(JSON.stringify(data));
         simpleStorage.set('token', data.token);
