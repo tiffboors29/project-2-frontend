@@ -18,15 +18,11 @@
         <link rel="stylesheet" href="node_modules/template/css/style.css">
         <link rel="stylesheet" href="node_modules/template/css/animate.min.css">
 <!--         <link rel="stylesheet" type="text/css" media="all" href="node_modules/template/css/style-projects.css"> -->
-        <link rel="stylesheet" href="assets/styles/custom.css">
+        <link rel="stylesheet" href="custom.css">
 
 
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="node_modules/template/ico/guitar-vector.ico">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="node_modules/template/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="node_modules/template/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="node_modules/template/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="node_modules/template/ico/apple-touch-icon-57-precomposed.png">
     </head>
   <body>
 
@@ -49,7 +45,7 @@
 
             <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav pull-right">
-                    <li class="active">
+                    <li>
                         <a href="index.html">Home</a>
                     </li>
                     <li>
@@ -59,7 +55,7 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Services <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="services.html">Services</a></li>
-                            <li><a href="work_orders.html">My Work Orders</a></li>
+                            <li class="active"><a href="work_orders.html">My Work Orders</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -73,13 +69,6 @@
                     <li>
                         <a href="contact.html"><span>Contact</span></a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Register/Login <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="btn-register" data-toggle="modal" data-target="#myRegisterModal">Register</a></li>
-                            <li><a class="btn-login" data-toggle="modal" data-target="#myLoginModal">Log-in</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -87,56 +76,6 @@
 
     <!-- End Header -->
 
-    <!-- Begin modal section -->
-    <div class="modal fade" id="myRegisterModal">
-      <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h4 class="modal-title">Register</h4>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="given_name">First Name</label>
-                <input id="given_name" class="form-control" placeholder="First Name" type="text">
-              </div>
-              <div class="form-group">
-                <label for="surname">Last Name</label>
-                <input id="surname" class="form-control" placeholder="Last Name" type="text">
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input id="email" class="form-control" placeholder="Enter email" type="email">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input id="password" class="form-control" placeholder="Password" type="password">
-              </div>
-            </div>
-            <div class="modal-footer">
-              <a href="#" data-dismiss="modal" class="btn">Close</a>
-              <button id="register" class="btn btn-primary">Register</button>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="myLoginModal">
-        <div class="modal-dialog">
-            <form>
-                <label for="loginEmail">Email</label>
-                <input id="loginEmail" placeholder="Email" type="email" >
-
-                <label for="loginPassword">Password</label>
-                <input id="loginPassword" placeholder="Password"
-                         type="password">
-                <a href="#" data-dismiss="modal" class="btn">Close</a>
-                <button id="login" class="btn btn-primary">Login</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- End modal section -->
 
 
     <!-- Begin #carousel-section -->
@@ -204,32 +143,47 @@
         <div class="container">
             <div class="row">
                 <div class="services-header">
+
+                    <h3 class="services-header-title">Register</h3>
+                        <input id="given_name" placeholder="First Name">
+                        <input id="surname" placeholder="Last Name">
+                        <br>
+                        <br>
+                        <input id="email" placeholder="Email" type="email">
+                        <input id="password" placeholder="password" type="password">
+                      <button id="register">Register</button>
+                    <h3 class="services-header-title">Login</h3>
+                      <input id="loginEmail" placeholder="Email" type="email">
+                        <input id="loginPassword" placeholder="password" type="password">
+                      <button id="login">Login</button>
+                    <br>
+                    <br>
                     <h3 class="services-header-title">Current Work Orders</h3>
                    <div>
-                      <input id="work-order-id" placeholder="id">
-                      <input id="work-order-title" placeholder="title">
+                      <input id="job-id" placeholder="id">
+                      <input id="job-title" placeholder="title">
                       <br>
                       <br>
-                      <input id="work-order-customer-id" placeholder="customer id">
-                      <input id="work-order-status" placeholder="status">
+                      <input id="job-customer-id" placeholder="customer id">
+                      <input id="job-status" placeholder="status">
                       <br>
                       <br>
-                      <input id="work-order-cost" placeholder="cost">
+                      <input id="job-cost" placeholder="cost">
                       <br>
                       <br>
-                      <input id="work-order-description" placeholder="description">
+                      <input id="job-description" placeholder="description">
                       <br>
                       <br>
-                      <button id="work-order-create">Create</button>
-                      <button id="work-order-update">Update</button>
-                      <button id="work-order-destroy">Destroy</button>
+                      <button id="job-create">Create</button>
+                      <button id="job-update">Update</button>
+                      <button id="job-destroy">Destroy</button>
                       <br>
                       <br>
-                      <button id="work-order-index">Show All</button>
+                      <button id="job-index">Show All</button>
                       <br>
                       <br>
-                      <button id="work-order-show">Find Order: </button>
-                      <input id="work-order-show-id" placeholder="id">
+                      <button id="job-show">Find Order: </button>
+                      <input id="job-show-id" placeholder="id">
                    </div>
                 </div>
             </div>
@@ -274,6 +228,6 @@
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/template/wow.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

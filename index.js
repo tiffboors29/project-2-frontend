@@ -22,7 +22,7 @@ $(function() {
         }
       }).done(function(data, textStatus, jqxhr){
         console.log(JSON.stringify(data));
-        $('#myRegisterModal').modal('hide'); // FIX ME
+        // $('#myRegisterModal').modal('hide'); // FIX ME
       }).fail(function(jqxhr, textStatus, errorThrown){
         console.log('registration failed');
       });
@@ -64,7 +64,7 @@ $(function() {
       $('#myRegisterModal').modal({show:true});
     });
 
-  alert('just before create');
+    // alert('just before job-create');
 
   $("#job-create").on('click', function(){
     $.ajax(sa + '/jobs', {
