@@ -22,7 +22,7 @@ $(function() {
         }
       }).done(function(data, textStatus, jqxhr){
         console.log(JSON.stringify(data));
-        // $('#myRegisterModal').modal('hide'); // FIX ME
+        simpleStorage.set('token', data.token);
       }).fail(function(jqxhr, textStatus, errorThrown){
         console.log('registration failed');
       });
@@ -39,13 +39,10 @@ $(function() {
           }
         }),
         dataType: 'json',
-        method: 'POST',
-        headers: {
-          Authorization: 'Token token=' + $('#token').val()
-        }
+        method: 'POST'
       }).done(function(data, textStatus, jqxhr){
         console.log(data.token);
-        $('#token').val(data.token);
+        simpleStorage.set('token', data.token);
       }).fail(function(jqshr, textStatus, errorThrown){
         console.log('login failed');
       });
@@ -77,6 +74,9 @@ $(function() {
           cost: $('#job-cost').val(),
           user_id: $('#job-user-id').val()
         }
+      },
+      headers: {
+        Authorization: 'Token token=' + simpleStorage.get('token')
       }
       }).done(function(data){
           console.log("Created job");
@@ -96,6 +96,9 @@ $(function() {
           cost: $('#job-cost').val(),
           user_id: $('#job-user-id').val()
         }
+      },
+      headers: {
+        Authorization: 'Token token=' + simpleStorage.get('token')
       }
       }).done(function(data){
           console.log("Updated job");
@@ -106,7 +109,10 @@ $(function() {
 
   $("#job-destroy").on('click', function(){
     $.ajax(sa + '/jobs/' + $("#job-id").val(), {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+        Authorization: 'Token token=' + simpleStorage.get('token')
+      }
       }).done(function(data){
           console.log("Deleted job");
       }).fail(function(data){
