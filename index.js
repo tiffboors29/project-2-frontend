@@ -3,6 +3,7 @@
 $(function() {
   // url root
   var sa = 'http://localhost:3000';
+  // var sa = 'https://glacial-mesa-6289.herokuapp.com';
 
 
   // hides order review and edit options untill buttons below clicked
