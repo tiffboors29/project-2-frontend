@@ -225,28 +225,28 @@
                     <h4>{{title}} Order #{{id}}</h4>
                     <p>
                         {{#if description}}
-                            Description: {{description}}
+                            <strong>Description:</strong> {{description}}
                         {{else}}
                             No Description Listed.
                         {{/if}}
                     </p>
                     <p>
                         {{#if user_id}}
-                            Customer: {{user_id}}
+                            <strong>Customer:</strong> {{user_id}}
                         {{else}}
                             No Customer Listed.
                         {{/if}}
                     </p>
                     <p>
                         {{#if status}}
-                          Status: {{status}}
+                          <strong>Status:</strong> {{status}}
                         {{else}}
                           No Status Listed.
                         {{/if}}
                     </p>
                     <p>
                         {{#if cost}}
-                          Cost: {{cost}}
+                          <strong>Cost:</strong> {{cost}}
                         {{else}}
                           No cost Listed.
                         {{/if}}
@@ -259,28 +259,28 @@
                 <h3>Work Order #{{job.id}} {{job.title}}</h3>
                     <p>
                         {{#if job.description}}
-                            Description: {{job.description}}
+                            <strong>Description:</strong> {{job.description}}
                         {{else}}
                             No Description Listed.
                         {{/if}}
                     </p>
                     <p>
                         {{#if job.user_id}}
-                            Customer: {{job.user_id}}
+                            <strong>Customer:</strong> {{job.user_id}}
                         {{else}}
                             No Customer Listed.
                         {{/if}}
                     </p>
                     <p>
                         {{#if job.status}}
-                          Status: {{job.status}}
+                          <strong>Status:</strong> {{job.status}}
                         {{else}}
                           No Status Listed.
                         {{/if}}
                     </p>
                     <p>
                         {{#if job.ost}}
-                          Cost: {{job.cost}}
+                          <strong>Cost:</strong> {{job.cost}}
                         {{else}}
                           No cost Listed.
                         {{/if}}
