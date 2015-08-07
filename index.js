@@ -155,13 +155,14 @@ $(function() {
       }
      }).done(function(data){
         console.log(data);
-        var newJobHtml = jobShowTemplate({data}); // FIX ME PLEEEEEEEASE //////////////
+        var newJobHtml = jobShowTemplate({job: data}); // FIX ME
         $("#show-jobs-list").html(newJobHtml);
         $("#job-show-sect").show();
+        $("#job-index-sect").hide();
         console.log(newJobHtml);
      }).fail(function(data){
         console.error(data);
-        alert('Failed to show job' + $("#job-show-id") + '. Please make sure this job exists before trying again.');
+        alert('Failed to show job ' + $("#job-show-id") + '. Please make sure this job exists before trying again.');
      });
   });
 
@@ -182,6 +183,7 @@ $(function() {
       var newJobHtml = jobIndexTemplate({jobs: data.jobs});
       $("#index-jobs-list").html(newJobHtml);
       $("#job-index-sect").show();
+      $("#job-show-sect").show();
     }).fail(function(data){
      console.error(data);
      alert('Failed to show all jobs. You may not have any active jobs.');
