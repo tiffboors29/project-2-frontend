@@ -101,10 +101,10 @@ sftp-config.json
 
 
 ### Bower ###
-bower_components
-.bower-cache
-.bower-registry
-.bower-tmp
+# bower_components
+# .bower-cache
+# .bower-registry
+# .bower-tmp
 
 
 ### OSX ###
@@ -113,7 +113,8 @@ bower_components
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
