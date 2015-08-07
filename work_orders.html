@@ -256,38 +256,36 @@
             </script>
 
             <script id="job-show-template" type="text/x-handlbars-template">
-                {{#each jobs}}
-                <h3>Work Order #{{id}} {{title}}</h3>
+                <h3>Work Order #{{job.id}} {{job.title}}</h3>
                     <p>
-                        {{#if description}}
-                            Description: {{description}}
+                        {{#if job.description}}
+                            Description: {{job.description}}
                         {{else}}
                             No Description Listed.
                         {{/if}}
                     </p>
                     <p>
-                        {{#if user_id}}
-                            Customer: {{user_id}}
+                        {{#if job.user_id}}
+                            Customer: {{job.user_id}}
                         {{else}}
                             No Customer Listed.
                         {{/if}}
                     </p>
                     <p>
-                        {{#if status}}
-                          Status: {{status}}
+                        {{#if job.status}}
+                          Status: {{job.status}}
                         {{else}}
                           No Status Listed.
                         {{/if}}
                     </p>
                     <p>
-                        {{#if cost}}
-                          Cost: {{cost}}
+                        {{#if job.ost}}
+                          Cost: {{job.cost}}
                         {{else}}
                           No cost Listed.
                         {{/if}}
                     </p>
                     <br>
-                {{/each}}
             </script>
             <!-- End templates -->
 

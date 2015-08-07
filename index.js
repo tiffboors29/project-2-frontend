@@ -104,6 +104,7 @@ $(function() {
 
   // job update click handler - for admin only
   $("#job-update").on('click', function(){
+    debugger;
     $.ajax(sa + '/jobs/' + $('#job-id').val(), {
       method: 'PATCH',
       data: {
