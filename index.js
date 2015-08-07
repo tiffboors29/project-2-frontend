@@ -12,11 +12,13 @@ $(function() {
   // show review options when review orders button clicked
   $("#review-orders").on('click', function() {
     $("#showIndex").show();
+    $("#jobCrud").hide();
   });
 
   // show edit order CRUD buttons when edit order button clicked
   $("#edit-orders").on('click', function() {
     $("#jobCrud").show();
+    $("#showIndex").hide();
   });
 
 
