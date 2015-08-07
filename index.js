@@ -1,80 +1,82 @@
 'use strict';
 
 $(function() {
+  // url root
   var sa = 'http://localhost:3000';
 
-  // navbar modal open for login
-  $('.btn-login').click(function(){
-    $('#myLoginModal').modal({show:true});
+
+  // hides order review and edit options untill buttons below clicked
+  $("#showIndex").hide();
+  $("#jobCrud").hide();
+
+  // show review options when review orders button clicked
+  $("#review-orders").on('click', function() {
+    $("#showIndex").show();
   });
 
-  // navbar modal open for login
-  $('.btn-register').click(function(){
-    $('#myRegisterModal').modal({show:true});
-  });
-
-  $('#work-order-show-sect').hide();
-  $('#admin-crud').hide();
-
-  $("#review-orders").click(function(){
-    $('#work-order-show-sect').show();
-  });
-
-  $("#edit-orders").click(function(){
-    $('#admin-crud').show();
+  // show edit order CRUD buttons when edit order button clicked
+  $("#edit-orders").on('click', function() {
+    $("#jobCrud").show();
   });
 
 
-    $('#register').on('click', function(e){
-      $.ajax(sa + '/users', {
-        contentType: 'application/json',
-        processData: false,
-        data: JSON.stringify({
-          credentials: {
-            given_name: $('#given_name').val(),
-            surname: $('#surname').val(),
-            email: $('#email').val(),
-            password: $('#password').val()
-          }
-        }),
-        dataType: 'json',
-        method: 'POST'
-      }).done(function(data, textStatus, jqxhr){
-        console.log(JSON.stringify(data));
-        simpleStorage.set('token', data.token);
-        window.location.href = "work_orders.html";
-      }).fail(function(jqxhr, textStatus, errorThrown){
-        console.log('registration failed');
-        alert('Registration failed. Please try again.');
-      });
+  // hide section untill 'show all' button clicked
+  $("#job-index-sect").hide();
+
+  // hide section untill 'find order' button clicked
+  $("#job-show-sect").hide();
+
+
+  // new user create/register handler
+  $('#register').on('click', function(e){
+    $.ajax(sa + '/users', {
+      contentType: 'application/json',
+      processData: false,
+      data: JSON.stringify({
+        credentials: {
+          given_name: $('#given_name').val(),
+          surname: $('#surname').val(),
+          email: $('#email').val(),
+          password: $('#password').val()
+        }
+      }),
+      dataType: 'json',
+      method: 'POST'
+    }).done(function(data, textStatus, jqxhr){
+      console.log(JSON.stringify(data));
+      simpleStorage.set('token', data.token);
+      window.location.href = "work_orders.html";
+    }).fail(function(jqxhr, textStatus, errorThrown){
+      console.log('registration failed');
+      alert('Registration failed. Please try again.');
     });
+  });
 
-    $('#login').on('click', function(e) {
-      $.ajax(sa + '/login', {
-        contentType: 'application/json',
-        processData: false,
-        data: JSON.stringify({
-          credentials: {
-            email: $('#loginEmail').val(),
-            password: $('#loginPassword').val()
-          }
-        }),
-        dataType: 'json',
-        method: 'POST'
-      }).done(function(data, textStatus, jqxhr){
-        console.log(data.token);
-        simpleStorage.set('token', data.token);
-        window.location.href = "work_orders.html";
-      }).fail(function(jqshr, textStatus, errorThrown){
-        console.log('login failed');
-        alert('Login failed. Please make sure your email and password are correct.');
-      });
+  // user login click handler
+  $('#login').on('click', function(e) {
+    $.ajax(sa + '/login', {
+      contentType: 'application/json',
+      processData: false,
+      data: JSON.stringify({
+        credentials: {
+          email: $('#loginEmail').val(),
+          password: $('#loginPassword').val()
+        }
+      }),
+      dataType: 'json',
+      method: 'POST'
+    }).done(function(data, textStatus, jqxhr){
+      console.log(data.token);
+      simpleStorage.set('token', data.token);
+      window.location.href = "work_orders.html";
+    }).fail(function(jqshr, textStatus, errorThrown){
+      console.log('login failed');
+      alert('Login failed. Please make sure your email and password are correct.');
     });
+  });
 
 
-
-    // alert('just before job-create');
-
+  // create job click handler - for admin only
   $("#job-create").on('click', function(){
     $.ajax(sa + '/jobs', {
       method: 'POST',
@@ -98,6 +100,7 @@ $(function() {
       });
     });
 
+  // job update click handler - for admin only
   $("#job-update").on('click', function(){
     $.ajax(sa + '/jobs/' + $('#job-id').val(), {
       method: 'PATCH',
@@ -121,6 +124,7 @@ $(function() {
       });
     });
 
+  // job destroy click handler - for admin only
   $("#job-destroy").on('click', function(){
     $.ajax(sa + '/jobs/' + $("#job-id").val(), {
         method: 'DELETE',
@@ -136,9 +140,11 @@ $(function() {
   });
 
 
-  var jobShowTemplate = Handlebars.compile($('#job-show-template').html()); // CREATE ME
+  // handlebars template for 'show' jobs
+  var jobShowTemplate = Handlebars.compile($('#job-show-template').html());
 
-  $("#job-show-template").on('click', function(event){
+  // click handler for showing job by id
+  $("#job-show").on('click', function(event){
    $.ajax({
      url: sa + "/jobs/" + $("#job-show-id").val(),
      method: 'GET',
@@ -146,17 +152,22 @@ $(function() {
         Authorization: 'Token token=' + simpleStorage.get('token')
       }
      }).done(function(data){
-      console.log(data);
-        var newJobHtml = jobShowTemplate({jobs: data});
+        console.log(data);
+        var newJobHtml = jobShowTemplate({data}); // FIX ME PLEEEEEEEASE //////////////
         $("#show-jobs-list").html(newJobHtml);
+        $("#job-show-sect").show();
+        console.log(newJobHtml);
      }).fail(function(data){
-       console.error(data);
-       alert('Failed to show job' + $("#job-show-id") + '. Please make sure this job exists before trying again.');
+        console.error(data);
+        alert('Failed to show job' + $("#job-show-id") + '. Please make sure this job exists before trying again.');
      });
-  }); // end job show
+  });
 
+
+  // handlebars template for 'index' jobs
   var jobIndexTemplate = Handlebars.compile($('#job-index-template').html());
 
+  // click handler for indexing all jobs
   $("#job-index").on('click', function(event){
    $.ajax({
      url: sa + "/jobs",
@@ -166,15 +177,14 @@ $(function() {
       }
     }).done(function(data){
       console.log(data);
-      var newJobHtml = jobIndexTemplate({jobs: data});
+      var newJobHtml = jobIndexTemplate({jobs: data.jobs});
       $("#index-jobs-list").html(newJobHtml);
+      $("#job-index-sect").show();
     }).fail(function(data){
      console.error(data);
      alert('Failed to show all jobs. You may not have any active jobs.');
     });
-  }); // end job index
-
-
+  });
 
 
 

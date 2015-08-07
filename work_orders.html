@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
 
@@ -138,127 +138,53 @@
     <!-- End #carousel-section -->
 
 
-    <!-- Begin #services-section -->
+
+    <!-- Begin main section -->
     <section id="services" class="services-section section-global-wrapper">
         <div class="container">
-            <div class="row">
-                <div id="login-header" class="services-header">
-                    <h4><a href="login-register.html">Register</a> or <a href="login-register.html">Login</a> to Review Your Work Orders</h4>
+
+            <div id="login-header" class="services-header">
+                <h4><a href="login-register.html">Register</a> or <a href="login-register.html">Login</a> to Review Your Work Orders</h4>
+            </div>
+            <button id="review-orders">Review Orders</button>
+            <button id="edit-orders">Edit Orders</button>
+
+            <div id="showIndex">
+                <h3>Current Work Orders</h3>
+                <div>
+                  <button id="job-show">Find Order: </button>
+                  <input id="job-show-id" placeholder="id">
+                  <button id="job-index">Show All</button>
                 </div>
-                <button id="review-orders">Review Orders</button>
-                <button id="edit-orders">Edit Orders</button>
-
-                <div id="work-order-show-sect"> <!-- Begin visible section-->
-                    <h3 class="services-header-title">Current Work Orders</h3>
-                    <div class="show-index-buttons">
-                      <button id="job-show">Find Order: </button>
-                      <input id="job-show-id" placeholder="id">
-                      <button id="job-index">Show All</button>
-                    </div>
-                    <br>
-
-                    <div>
-                        <script id="job-index-template" type="text/x-handlbars-template">
-                          <h3>Current Work Orders</h3>
-                          {{#each jobs}}
-                          <h4{{title}}</h4>
-                          <ul id="index-jobs-list">
-                            <li>
-                                {{#if description}}
-                                  Description: {{description}}
-                                {{else}}
-                                  No Description Listed.
-                                {{/if}}
-                              </li>
-                              <li>
-                                {{#if user_id}}
-                                  Customer: {{user_id}}
-                                {{else}}
-                                  No Customer Listed.
-                                {{/if}}
-                              </li>
-                              <li>
-                                {{#if status}}
-                                  Dtatus: {{status}}
-                                {{else}}
-                                  No Status Listed.
-                                {{/if}}
-                              </li>
-                              <li>
-                                {{#if cost}}
-                                  Cost: {{cost}}
-                                {{else}}
-                                  No cost Listed.
-                                {{/if}}
-                              </li>
-                            </ul>
-                          {{/each}}
-                        </script>
-                    </div>
-
-                    <div>
-                        <script id="job-show-template" type="text/x-handlbars-template">
-                          <h3>Current Work Order</h3>
-                          {{#each jobs}}
-                          <h4{{title}}</h4>
-                          <ul id="show-jobs-list">
-                            <li>
-                                {{#if description}}
-                                  Description: {{description}}
-                                {{else}}
-                                  No Description Listed.
-                                {{/if}}
-                              </li>
-                              <li>
-                                {{#if user_id}}
-                                  Customer: {{user_id}}
-                                {{else}}
-                                  No Customer Listed.
-                                {{/if}}
-                              </li>
-                              <li>
-                                {{#if status}}
-                                  Dtatus: {{status}}
-                                {{else}}
-                                  No Status Listed.
-                                {{/if}}
-                              </li>
-                              <li>
-                                {{#if cost}}
-                                  Cost: {{cost}}
-                                {{else}}
-                                  No cost Listed.
-                                {{/if}}
-                              </li>
-                            </ul>
-                          {{/each}}
-                        </script>
-                    </div>  <!-- End show index box -->
-
-                </div> <!-- End work-order-sect-->
                 <br>
-                <div id="admin-crud" class="admin-job-crud"> <!-- Begin admin job-crud-->
-                    <div class="jobs-inputs">
-                      <input id="job-id" placeholder="id">
-                      <input id="job-title" placeholder="title">
-                      <input id="job-customer-id" placeholder="customer id">
-                      <input id="job-status" placeholder="status">
-                      <input id="job-cost" placeholder="cost">
-                      <input id="job-description" placeholder="description">
-                    </div>
-                    <br>
-                    <div class="jobs-buttons">
-                      <button id="job-create">Create</button>
-                      <button id="job-update">Update</button>
-                      <button id="job-destroy">Destroy</button>
-                    </div>
+                <div id="job-index-sect">
+                    <h3>All Orders</h3>
+                    <div id="index-jobs-list"></div>
                 </div>
 
+                <div id="job-show-sect">
+                    <div id="show-jobs-list"></div>
+                </div>
+            </div>
 
-            </div> <!-- end div class row-->
+            <div id="jobCrud"> <!-- Begin jobCrud-->
+                <div class="jobs-inputs">
+                  <input id="job-id" placeholder="id">
+                  <input id="job-title" placeholder="title">
+                  <input id="job-customer-id" placeholder="customer id">
+                  <input id="job-status" placeholder="status">
+                  <input id="job-cost" placeholder="cost">
+                  <input id="job-description" placeholder="description">
+                </div>
+                <br>
+                <div class="jobs-buttons">
+                  <button id="job-create">Create</button>
+                  <button id="job-update">Update</button>
+                  <button id="job-destroy">Destroy</button>
+                </div>
+            </div> <!-- end jobCrud-->
         </div> <!-- end div class container-->
     </section>
-    <!-- End #services-section -->
 
 
     <!-- Footer -->
@@ -292,6 +218,78 @@
       </div>
     </footer>
 
+
+    <!-- Templates -->
+            <script id="job-index-template" type="text/x-handlbars-template">
+                {{#each jobs}}
+                    <h4>{{title}} Order #{{id}}</h4>
+                    <p>
+                        {{#if description}}
+                            Description: {{description}}
+                        {{else}}
+                            No Description Listed.
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{#if user_id}}
+                            Customer: {{user_id}}
+                        {{else}}
+                            No Customer Listed.
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{#if status}}
+                          Status: {{status}}
+                        {{else}}
+                          No Status Listed.
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{#if cost}}
+                          Cost: {{cost}}
+                        {{else}}
+                          No cost Listed.
+                        {{/if}}
+                    </p>
+                    <br>
+                {{/each}}
+            </script>
+
+            <script id="job-show-template" type="text/x-handlbars-template">
+                {{#each jobs}}
+                <h3>Work Order #{{id}} {{title}}</h3>
+                    <p>
+                        {{#if description}}
+                            Description: {{description}}
+                        {{else}}
+                            No Description Listed.
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{#if user_id}}
+                            Customer: {{user_id}}
+                        {{else}}
+                            No Customer Listed.
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{#if status}}
+                          Status: {{status}}
+                        {{else}}
+                          No Status Listed.
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{#if cost}}
+                          Cost: {{cost}}
+                        {{else}}
+                          No cost Listed.
+                        {{/if}}
+                    </p>
+                    <br>
+                {{/each}}
+            </script>
+            <!-- End templates -->
 
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
