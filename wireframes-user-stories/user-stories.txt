@@ -1,0 +1,11 @@
+User can register in order to view work order status
+
+User can login in orger to view work order status
+
+Admin can create, update, and delete work orders
+
+Admin can index all work orders
+
+Admin can show specific work orders
+
+User can index all of his/her work orders
