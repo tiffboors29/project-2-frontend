@@ -21,6 +21,7 @@ This game was created as my second project for General Assembly's Web Developmen
 ## User Stories
 My [user stories](/wireframes-user-stories/user-stories.txt) outline basic user activity for registering, logging in and reviewing the status of work orders. They also detail admin activity and the admin's ability to create, update and delete work orders as well as view an index of all open jobs.
 
+
 Check out my site [here]: (http://tiffboors29.github.io/ng-fe/)
 You can register or login to review work orders on the services--> my work orders page. Without administrative functions, however, you will not be able to create, update or delete orders. To get a feel for the site and the admin capabilities, feel free to sign in with
 * email: admin@nestoguitars.com

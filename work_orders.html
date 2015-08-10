@@ -154,6 +154,7 @@
                   <button id="job-show">Find Order: </button>
                   <input id="job-show-id" placeholder="id">
                   <button id="job-index">Show All</button>
+                  <button id="user-index">Show All Customers</button>
                 </div>
                 <br>
                 <div id="job-index-sect">
@@ -164,6 +165,12 @@
                 <div id="job-show-sect">
                     <div id="show-jobs-list"></div>
                 </div>
+
+                <div id="user-index-sect">
+                    <h3>Your Current Customers</h3>
+                    <div id="index-users-list"></div>
+                </div>
+
             </div>
 
             <div id="jobCrud"> <!-- Begin jobCrud-->
@@ -285,6 +292,15 @@
                         {{/if}}
                     </p>
                     <br>
+            </script>
+
+            <script id="user-index-template" type="text/x-handlbars-template">
+                {{#each users}}
+                    <h4>{{given_name}} {{surname}} ID:{{id}}</h4>
+                    <p>
+                        <strong>Email:</strong> {{email}}
+                    </p>
+                {{/each}}
             </script>
             <!-- End templates -->
 
