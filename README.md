@@ -24,7 +24,13 @@ My [user stories](/wireframes-user-stories/user-stories.txt) outline basic user 
 
 Check out my site [here]: (http://tiffboors29.github.io/ng-fe/)
 You can register or login to review work orders on the services--> my work orders page. Without administrative functions, however, you will not be able to create, update or delete orders. To get a feel for the site and the admin capabilities, feel free to sign in with
+* email: admin@nestoguitars.com
+* password: nestoadmin
+
+Logged in as this admin on the my-work-orders page, you will be able to view all orders when you click 'Review Orders' and then click 'Show All'. You will also be able to edit orders by their id number if you click 'Edit Orders'.
+
+To view order as a regular customer or user, login with
 * email: guest@nestoguitars.com
 * password: nestoguest
 
-Logged in as this guest on the my-work-orders page, you will be able to view all orders when you click 'Review Orders' and then click 'Show All'. You will also be able to edit orders by their id number if you click 'Edit Orders'.
+Logged in as this guest on the my-work-orders page, you will be able to view only orders associated with this guest customer when you click 'Review Orders' and then click 'Show All'. You will also not be able to edit, create or delete orders because you do not have admin permissions.
