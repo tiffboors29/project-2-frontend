@@ -3,6 +3,11 @@
   margin-top: -15px;
 }
 
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+
 
 @media (max-width: 999px) {
     .navbar-header {
