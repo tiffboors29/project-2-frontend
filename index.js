@@ -2,8 +2,8 @@
 
 $(function() {
   // url root
-  var sa = 'http://localhost:3000';
-  // var sa = 'https://glacial-mesa-6289.herokuapp.com';
+  // var sa = 'http://localhost:3000';
+  var sa = 'https://glacial-mesa-6289.herokuapp.com';
 
 
   // hides order review and edit options untill buttons below clicked
@@ -28,6 +28,9 @@ $(function() {
 
   // hide section untill 'find order' button clicked
   $("#job-show-sect").hide();
+
+  // hide section untill 'show customers' button clicked
+  $('#user-index-sect').hide();
 
 
   // new user create/register handler
@@ -188,6 +191,28 @@ $(function() {
     }).fail(function(data){
      console.error(data);
      alert('Failed to show all jobs. You may not have any active jobs.');
+    });
+  });
+
+  // handlebars template for 'index' users
+  var userIndexTemplate = Handlebars.compile($('#user-index-template').html());
+
+  // click handler for indexing all users
+  $("#user-index").on('click', function(event){
+   $.ajax({
+     url: sa + "/users",
+     method: 'GET',
+     headers: {
+        Authorization: 'Token token=' + simpleStorage.get('token')
+      }
+    }).done(function(data){
+      console.log(data);
+      var newUserHtml = userIndexTemplate({users: data.users});
+      $("#index-users-list").html(newUserHtml);
+      $("#user-index-sect").show();
+    }).fail(function(data){
+     console.error(data);
+     alert('Failed to show all customers. You may not have any active customers.');
     });
   });
 
