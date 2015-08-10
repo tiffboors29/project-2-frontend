@@ -18,6 +18,9 @@ iframe {
   height: 300px;
 }
 
+.navbar-brand {
+  margin-top: -15px;
+}
 
 
 @media (max-width: 999px) {
