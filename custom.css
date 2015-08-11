@@ -125,3 +125,16 @@ iframe {
   height: 300px;
 }
 /* end contact page styles */
+
+
+/* social media icon styles */
+.social-btn {
+  height: 3em;
+}
+
+.social-links {
+  display: inline-block;
+  float: left;
+  margin-right: 2%;
+}
+/* social media icon styles */
