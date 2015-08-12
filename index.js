@@ -92,7 +92,7 @@ $(function() {
           description: $('#job-description').val(),
           status: $('#job-status').val(),
           cost: $('#job-cost').val(),
-          user_id: $('#job-user-id').val()
+          user_id: $('#job-customer-id').val()
         }
       },
       headers: {
@@ -116,7 +116,7 @@ $(function() {
           description: $('#job-description').val(),
           status: $('#job-status').val(),
           cost: $('#job-cost').val(),
-          user_id: $('#job-user-id').val()
+          user_id: $('#job-customer-id').val()
         }
       },
       headers: {
