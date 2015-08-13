@@ -5,7 +5,7 @@ This frontend is built for Nesto Guitar Service, a website that details a local 
 
 
 
-This game was created as my second project for General Assembly's Web Development Immersive. My approach to creating this game began with simple wireframes from which my HTML/CSS and JavaScript code developed. I had planned to implement a shop for users to buy guitars and parts and plan to continue working to add this feature. I currently have a contact form template on the contact page, and plan to make this feature send emails to the admin. These are unsolved aspects that I plan to continue working on.
+This app was created as my second project for General Assembly's Web Development Immersive. My approach to creating this game began with simple wireframes from which my HTML/CSS and JavaScript code developed. I had planned to implement a shop for users to buy guitars and parts and plan to continue working to add this feature. I currently have a contact form template on the contact page, and plan to make this feature send emails to the admin. These are unsolved aspects that I plan to continue working on.
 
 
 
